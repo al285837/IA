@@ -82,6 +82,8 @@
      <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Heap.cs" />
      <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Node.cs" />
      <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Pathfinding.cs" />
+     <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\PathRequestManager.cs" />
+     <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Unit.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/carli/OneDrive/Documentos/GitHub/IA/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
