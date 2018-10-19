@@ -641,7 +641,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1236234261}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0185184, y: 0, z: 2.8148148}
+  m_LocalPosition: {x: -2.42, y: 0, z: 2.8148148}
   m_LocalScale: {x: 0.67592597, y: 1.0785, z: 1.3025464}
   m_Children: []
   m_Father: {fileID: 615727804}
@@ -746,6 +746,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 2048
     terrainPenalty: 5
+  obstacleProximityPenalty: 10
 --- !u!4 &1384843034
 Transform:
   m_ObjectHideFlags: 0
@@ -794,7 +795,7 @@ GameObject:
   - component: {fileID: 1565536272}
   - component: {fileID: 1565536271}
   m_Layer: 0
-  m_Name: Seeker (1)
+  m_Name: 'Seeker '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1058,7 +1059,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2069444615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.37, y: 0, z: -0.63}
+  m_LocalPosition: {x: -2.72, y: 0, z: -0.63}
   m_LocalScale: {x: 1.0318468, y: 1.0785, z: 2.8541088}
   m_Children: []
   m_Father: {fileID: 615727804}
