@@ -813,6 +813,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 258597557}
+  speed: 20
+  turnSpeed: 3
+  turnDst: 5
+  stoppingDst: 10
 --- !u!136 &1565536272
 CapsuleCollider:
   m_ObjectHideFlags: 0

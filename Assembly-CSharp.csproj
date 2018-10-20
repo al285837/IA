@@ -80,7 +80,9 @@
      <Compile Include="Assets\DEV\TPSCamera.cs" />
      <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Grid.cs" />
      <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Heap.cs" />
+     <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Line.cs" />
      <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Node.cs" />
+     <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Path.cs" />
      <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Pathfinding.cs" />
      <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\PathRequestManager.cs" />
      <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Unit.cs" />
