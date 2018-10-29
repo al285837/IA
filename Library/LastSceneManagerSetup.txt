@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/SONIDO/ESCENAS/pruebaSonido.unity
+- path: Assets/JUEGO ESTRELLA/ESCENAS/prueba.unity
   isLoaded: 1
   isActive: 1
