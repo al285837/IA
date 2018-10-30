@@ -22,4 +22,31 @@ public class ValueBar : MonoBehaviour {
 		//Bar.fillAmount = fill;
 		
 	}
+
+    public void FillBar(float value)
+    {
+        if(fill < 100f) {
+            fill += value;
+        }
+        
+
+    }
+    public void DecreaseBar (float value)
+    {
+        if(fill > 0f)
+        {
+            fill -= value;
+        }
+        if (fill < 0f)
+            EmptyBar();
+    }
+    public void EmptyBar()
+    {
+        fill = 0f;
+    }
+
+    public void BarToValue(float value)
+    {
+        fill = value;
+    }
 }

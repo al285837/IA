@@ -5,19 +5,28 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 
 	public float speed;
+    public Vector3 direccion;
 
-	// Use this for initialization
-	void Start () 
+
+    // Use this for initialization
+    void Start () 
 	{
 
 		speed = 5f;
+        direccion = new Vector3(0,0,0);
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		transform.Translate (speed*Input.GetAxis("Horizontal")*Time.deltaTime, 0f, speed*Input.GetAxis("Vertical")*Time.deltaTime);
+        if (Input.GetKey("v")) speed = 2f;
+        else speed = 5f;
+        direccion = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+
+  
+
+        transform.Translate ((direccion) * speed*Time.deltaTime);
 		
 	}
 }
