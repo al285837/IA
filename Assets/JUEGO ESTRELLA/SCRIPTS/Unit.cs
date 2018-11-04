@@ -16,7 +16,7 @@ public class Unit : MonoBehaviour {
     public float stoppingDst = 10;
 
     Path path;
-    Transform transform;
+    //Transform transform;
 
 
 
@@ -26,15 +26,20 @@ public class Unit : MonoBehaviour {
     {
 
         Transform targetHeard = GameObject.FindGameObjectWithTag("TargetHeard").transform;
-        transform = GetComponent<Transform>();
+        //transform = GetComponent<Transform>();
         targetHeard.position = transform.position;
-        StartCoroutine(UpdatePath());
         target = targetHeard;
+        StartCoroutine(UpdatePath());
+        
         
     }
 
     public void OnPathFound(Vector3 [] waypoints, bool pathSuccessful)
     {
+        for (int i =0;i<waypoints.Length; i++){
+            waypoints[i] += new Vector3(0,1,0);
+        }
+
         if (pathSuccessful)
         {
             path = new Path(waypoints,transform.position,turnDst,stoppingDst);
