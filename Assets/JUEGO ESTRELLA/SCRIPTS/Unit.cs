@@ -10,7 +10,7 @@ public class Unit : MonoBehaviour {
     const float pathUpdateMoveThreshold = .5f;
 
     Transform target;
-    public float speed = 20;
+    public float speed = 3;
     public float turnSpeed = 3;
     public float turnDst = 5;
     public float stoppingDst = 10;
@@ -20,7 +20,7 @@ public class Unit : MonoBehaviour {
 
 
 
-    
+
 
     void Start()
     {

@@ -57,43 +57,30 @@ public class Enemy : MonoBehaviour {
             {
 
 
-                /*
-                if (bar.fill >= 25) {
-                    nav.SetDestination (player.position); //seguir acercandose al target
-                    nav.Resume ();
-                }
-                */
+            /*
+            if (bar.fill >= 25) {
+                nav.SetDestination (player.position); //seguir acercandose al target
+                nav.Resume ();
+            }
+            */
 
 
 
-                if (bar.fill == 0)
-                {
 
-                    bar.EmptyBar();
-                    //nav.Stop();
-
-                }
-                else
-                {
-                    if (!searching)
-                    {
-                        bar.DecreaseBar(Time.deltaTime * .2f);
-                        bar.Bar.fillAmount = bar.fill;
-                    }
-
-                }
+                
 
 
-            } 
+
+        } 
 
 
 		
 
 
-        if ((transform.position - target.position).magnitude <0.1f)
+        if ((transform.position - target.position).magnitude <0.5f)
         {
-            //nav.Stop();
             searching = false;
+            //lookaround
         }
 
 		

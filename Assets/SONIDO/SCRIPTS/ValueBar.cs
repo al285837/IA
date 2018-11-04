@@ -7,28 +7,44 @@ public class ValueBar : MonoBehaviour {
 
 	public Image Bar;
 	public float fill;
+    Unit pathfinding;
 
 	// Use this for initialization
 	void Start () {
 
 		fill = 0f;
+        pathfinding = GetComponent<Unit>();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		//fill += Time.deltaTime * 0.1f;
-		//Bar.fillAmount = fill;
-		
-	}
+        pathfinding.speed = 3f;
+
+		if (fill>=.25f)
+        {
+            pathfinding.speed = 3f;
+        }
+
+        if (fill >= .6f)
+        {
+            pathfinding.speed = 6f;
+        }
+        if (fill >= 1f)
+        {
+            //te puto mata pringao
+        }
+
+    }
 
     public void FillBar(float value)
     {
-        if(fill < 100f) {
+        if(fill < 1f) {
             fill += value;
         }
-        
+        if (fill < 0f)
+            EmptyBar();
 
     }
     public void DecreaseBar (float value)
