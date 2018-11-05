@@ -36,7 +36,7 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        crouchPressed = Input.GetKeyDown("v");
+        crouchPressed = Input.GetKeyDown("c");
         if (crouchPressed) toggleCrouch();
         moving = Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f;
 
@@ -105,13 +105,12 @@ public class Character : MonoBehaviour
 
         direccion = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
-        Quaternion targetRotation = Quaternion.LookRotation(direccion.normalized, Vector3.up);
+        if (direccion != Vector3.zero) transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direccion), 0.15F);
 
-        Quaternion transformRotation = Quaternion.LookRotation(transform.forward.normalized, Vector3.up);
+        
 
-        transform.rotation = Quaternion.Slerp(transformRotation, targetRotation, Time.deltaTime * 2.0f);
-
-        transform.Translate((direccion.normalized) * speed * Time.deltaTime);
+        transform.Translate((direccion.normalized) * speed * Time.deltaTime, Space.World);
+      
 
 
     }
