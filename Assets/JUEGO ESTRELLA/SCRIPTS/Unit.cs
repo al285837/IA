@@ -9,22 +9,37 @@ public class Unit : MonoBehaviour {
     const float minPathUpdateTime = .2f;
     const float pathUpdateMoveThreshold = .5f;
 
-    public Transform target;
-    public float speed = 20;
+    Transform target;
+    public float speed = 3;
     public float turnSpeed = 3;
     public float turnDst = 5;
     public float stoppingDst = 10;
 
     Path path;
-    
+    //Transform transform;
+
+
+
+
 
     void Start()
     {
+
+        Transform targetHeard = GameObject.FindGameObjectWithTag("TargetHeard").transform;
+        //transform = GetComponent<Transform>();
+        targetHeard.position = transform.position;
+        target = targetHeard;
         StartCoroutine(UpdatePath());
+        
+        
     }
 
     public void OnPathFound(Vector3 [] waypoints, bool pathSuccessful)
     {
+        for (int i =0;i<waypoints.Length; i++){
+            waypoints[i] += new Vector3(0,1,0);
+        }
+
         if (pathSuccessful)
         {
             path = new Path(waypoints,transform.position,turnDst,stoppingDst);

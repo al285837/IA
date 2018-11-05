@@ -7,61 +7,82 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour {
 
 	Transform player;
-	NavMeshAgent nav;
+	//NavMeshAgent nav;
 	public float distanceToAttack = 2f;
-	public ValueBar bar;
+	ValueBar bar;
+
+    public bool searching;
+    Transform target;
+    float detectionSpeed = 5f;
+    Character script;
+ 
 
 	// Use this for initialization
 	void Start () {
+        bar = GetComponent<ValueBar>();
+        script =  GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        target = GameObject.FindGameObjectWithTag("TargetHeard").transform;
 
-		player = GameObject.FindGameObjectWithTag ("Player").transform;
-		nav = GetComponent<NavMeshAgent> ();
+
+
+        //nav = GetComponent<NavMeshAgent> ();
+        searching = false;
+       // target.position = transform.position;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (Vector3.Distance (player.position, this.transform.position) < distanceToAttack ) {
+		
 
-			if (Input.GetButton ("Horizontal") || Input.GetButton ("Vertical")) {
-			
-				if (bar.fill >= 1) {
-					nav.SetDestination (player.position);
-					nav.Resume ();
-				} else {
+			if ((Vector3.Distance(player.position, this.transform.position) < distanceToAttack) && (Input.GetButton ("Horizontal") || Input.GetButton ("Vertical") )  && script.speed >= detectionSpeed) {
 
-					bar.fill += Time.deltaTime * 0.2f;
-					bar.Bar.fillAmount = bar.fill;
 
-				}
+               
+                target.position = player.position;
+                searching = true;
+                //BARRA == 0
+                if (bar.fill < 0.30f)
+                    bar.BarToValue(.30f);
+                bar.Bar.fillAmount = bar.fill;
+                //nav.SetDestination(player.position);        //Target  para A*
+                //nav.Resume();
+
+              
 			
 			}
+            else
+            {
+
+
+            /*
+            if (bar.fill >= 25) {
+                nav.SetDestination (player.position); //seguir acercandose al target
+                nav.Resume ();
+            }
+            */
 
 
 
-		} else {
 
-			if (bar.fill >= 1) {
-				nav.SetDestination (player.position);
-				nav.Resume ();
-			}
-
-			if (bar.fill == 0) {
-
-				bar.fill = 0f;
-				nav.Stop ();
-
-			} else {
-
-				bar.fill -= Time.deltaTime * 0.1f;
-				bar.Bar.fillAmount = bar.fill;
-
-			}
+                
 
 
-		}
-			
+
+        } 
+
+
+		
+
+
+        if ((transform.position - target.position).magnitude <0.5f)
+        {
+            searching = false;
+            //lookaround
+        }
+
 		
 	}
 }
