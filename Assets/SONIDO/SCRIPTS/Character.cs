@@ -15,23 +15,22 @@ public class Character : MonoBehaviour
     bool moving = false;
     bool crouchPressed = false;
     bool crouching = false;
-<<<<<<< HEAD
-=======
+
     public Vector3 direccion;
->>>>>>> Unir-Partes
+
 
     // Use this for initialization
     void Start()
     {
 
-<<<<<<< HEAD
+
         speed = 3.5f;
         anim = GetComponent<Animator>();
-=======
+
         speed = 5f;
         anim = GetComponent<Animator>();
         direccion = new Vector3(0, 0, 0);
->>>>>>> Unir-Partes
+
     }
 
     // Update is called once per frame
@@ -100,10 +99,10 @@ public class Character : MonoBehaviour
         if(sprinting) speed = 5f;
         if (crouchW) speed = 2f;
 
-<<<<<<< HEAD
 
 
-=======
+
+
         direccion = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
         Quaternion targetRotation = Quaternion.LookRotation(direccion.normalized, Vector3.up);
@@ -112,8 +111,8 @@ public class Character : MonoBehaviour
 
         transform.rotation = Quaternion.Slerp(transformRotation, targetRotation, Time.deltaTime * 2.0f);
 
-        transform.Translate((direccion) * speed * Time.deltaTime);
->>>>>>> Unir-Partes
+        transform.Translate((direccion.normalized) * speed * Time.deltaTime);
+
 
     }
 
