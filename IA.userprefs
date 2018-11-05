@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SONIDO\SCRIPTS\PlayerFollow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\JUEGO ESTRELLA\SCRIPTS\Pathfinding.cs">
     <Files>
       <File FileName="Assets\SONIDO\SCRIPTS\Character.cs" Line="1" Column="1" />
       <File FileName="Assets\SONIDO\SCRIPTS\PlayerFollow.cs" Line="1" Column="1" />
       <File FileName="Assets\SONIDO\SCRIPTS\ValueBar.cs" Line="1" Column="1" />
       <File FileName="Assets\SONIDO\SCRIPTS\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\JUEGO ESTRELLA\SCRIPTS\Pathfinding.cs" Line="44" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
