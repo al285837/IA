@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-
+    [HideInInspector]
     public float speed;
+
+    public float standing_speed;
+    public float crouching_speed;
     Animator anim;
     bool sprinting = false;
     bool crouchI = false;
@@ -23,11 +26,10 @@ public class Character : MonoBehaviour
     void Start()
     {
 
+        standing_speed = 10f;    //VELOCIDADES DE PIE Y AGACHADO
+        crouching_speed = 4f;
 
-        speed = 3.5f;
-        anim = GetComponent<Animator>();
 
-        speed = 5f;
         anim = GetComponent<Animator>();
         direccion = new Vector3(0, 0, 0);
 
@@ -96,8 +98,8 @@ public class Character : MonoBehaviour
             }
         }
         actualizarBools();
-        if(sprinting) speed = 5f;
-        if (crouchW) speed = 2f;
+        if(sprinting) speed = standing_speed;
+        if (crouchW) speed = crouching_speed;
 
 
 
