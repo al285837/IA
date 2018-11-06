@@ -19,7 +19,17 @@ public class Character : MonoBehaviour
     bool crouchPressed = false;
     bool crouching = false;
 
+    float c_height= 1f;
+    float st_height = 1.446755f;
+
+    CapsuleCollider capsula;
+
     public Vector3 direccion;
+
+    Vector3 center = new Vector3(0, 0.6187291f, 0);
+    Vector3 low_center= new Vector3(0, 0.42f, 0);
+
+    public float numero;
 
 
     // Use this for initialization
@@ -29,9 +39,11 @@ public class Character : MonoBehaviour
         standing_speed = 10f;    //VELOCIDADES DE PIE Y AGACHADO
         crouching_speed = 4f;
 
+        capsula = GetComponent<CapsuleCollider>();
 
         anim = GetComponent<Animator>();
         direccion = new Vector3(0, 0, 0);
+
 
     }
 
@@ -97,10 +109,24 @@ public class Character : MonoBehaviour
                     
             }
         }
-        actualizarBools();
-        if(sprinting) speed = standing_speed;
-        if (crouchW) speed = crouching_speed;
 
+        actualizarBools();
+
+        if (!crouching)
+        {
+            speed = standing_speed;
+            capsula.height = st_height;
+            capsula.center = center;
+        }
+        if (crouching)
+        {
+            speed = crouching_speed;
+            capsula.height = c_height;
+            capsula.center =  low_center;
+
+
+        }
+        numero = capsula.height;
 
 
 

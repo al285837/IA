@@ -39,40 +39,16 @@ public class Enemy : MonoBehaviour {
 
 			if ((Vector3.Distance(player.position, this.transform.position) < distanceToAttack) && (Input.GetButton ("Horizontal") || Input.GetButton ("Vertical") )  && script.speed >= detectionSpeed) {
 
-
-               
                 target.position = player.position;
                 searching = true;
                 //BARRA == 0
                 if (bar.fill < 0.30f)
                     bar.BarToValue(.30f);
                 bar.Bar.fillAmount = bar.fill;
-                //nav.SetDestination(player.position);        //Target  para A*
-                //nav.Resume();
-
+ 
               
 			
 			}
-            else
-            {
-
-
-            /*
-            if (bar.fill >= 25) {
-                nav.SetDestination (player.position); //seguir acercandose al target
-                nav.Resume ();
-            }
-            */
-
-
-
-
-                
-
-
-
-        } 
-
 
 		
 
