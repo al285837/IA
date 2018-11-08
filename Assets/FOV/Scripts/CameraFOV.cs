@@ -5,9 +5,10 @@ using UnityEngine;
 public class CameraFOV : MonoBehaviour {
 
 
-    ValueBar bar;
+    CameraValueBar bar;
     Transform Player;
-    Transform targetHeard;
+    GameObject[] targets;
+    Transform[] targetsHeard;
 
 
     public float viewRadius;
@@ -33,8 +34,13 @@ public class CameraFOV : MonoBehaviour {
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
 
-        targetHeard = GameObject.FindGameObjectWithTag("TargetHeard").transform;
-        bar = GetComponent<ValueBar>();
+        targets = GameObject.FindGameObjectsWithTag("TargetHeard");
+        targetsHeard = new Transform[targets.Length];
+        for(int j=0; j<targetsHeard.Length; j++)
+        {
+            targetsHeard[j] = targets[j].transform;
+        }
+        bar = GetComponent<CameraValueBar>();
         Player = GameObject.FindGameObjectWithTag("Player").transform;
        
 
@@ -101,9 +107,12 @@ public class CameraFOV : MonoBehaviour {
 
 
 
-                    if (bar.fill >= 0.25f)
+                    if (bar.fill == 1f)
                     {
-                        targetHeard.position = Player.position;
+                        for (int j = 0; j < targetsHeard.Length; j++)
+                        {
+                            targetsHeard[j].position = Player.position;
+                        }
                     }
 
                 }

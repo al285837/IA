@@ -32,7 +32,7 @@ public class FieldOfView : MonoBehaviour {
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
 
-        targetHeard = GameObject.FindGameObjectWithTag("TargetHeard").transform;
+        targetHeard = SoundScript.target;
         bar = GetComponent<ValueBar>();
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         SoundScript = GetComponent<Enemy>();

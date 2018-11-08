@@ -25,7 +25,7 @@ public class Unit : MonoBehaviour {
     void Start()
     {
 
-        Transform targetHeard = GameObject.FindGameObjectWithTag("TargetHeard").transform;
+        Transform targetHeard = GetComponent<Enemy>().target;
         //transform = GetComponent<Transform>();
         targetHeard.position = transform.position;
         target = targetHeard;

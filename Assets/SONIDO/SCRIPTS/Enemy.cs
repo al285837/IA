@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour {
 	ValueBar bar;
 
     public bool searching;
-    Transform target;
+    public Transform target;
     float detectionSpeed = 5f;
     Character script;
  
@@ -22,8 +22,8 @@ public class Enemy : MonoBehaviour {
         bar = GetComponent<ValueBar>();
         script =  GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        target = GameObject.FindGameObjectWithTag("TargetHeard").transform;
-
+        
+           
 
 
         //nav = GetComponent<NavMeshAgent> ();
