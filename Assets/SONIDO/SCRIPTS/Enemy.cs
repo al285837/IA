@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour {
     public Transform target;
     float detectionSpeed = 5f;
     Character script;
+    Animator anim;
+
  
 
 	// Use this for initialization
@@ -22,6 +24,7 @@ public class Enemy : MonoBehaviour {
         bar = GetComponent<ValueBar>();
         script =  GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        anim = GetComponent<Animator>();
         
            
 
@@ -35,6 +38,7 @@ public class Enemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
 		
 
 			if ((Vector3.Distance(player.position, this.transform.position) < distanceToAttack) && (Input.GetButton ("Horizontal") || Input.GetButton ("Vertical") )  && script.speed >= detectionSpeed) {
@@ -45,6 +49,8 @@ public class Enemy : MonoBehaviour {
                 if (bar.fill < 0.30f)
                     bar.BarToValue(.30f);
                 bar.Bar.fillAmount = bar.fill;
+
+                
  
               
 			
@@ -61,4 +67,15 @@ public class Enemy : MonoBehaviour {
 
 		
 	}
+
+
+
+
+    void SetAllFalse()
+    {
+        anim.SetBool("Idle", false);
+        anim.SetBool("Running", false);
+        anim.SetBool("Walking", false);
+        anim.SetBool("Fire", false);
+    }
 }

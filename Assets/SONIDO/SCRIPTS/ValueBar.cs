@@ -9,11 +9,14 @@ public class ValueBar : MonoBehaviour {
 	public float fill;
     Unit pathfinding;
 
+    Animator anim;
+
 	// Use this for initialization
 	void Start () {
 
 		fill = 0f;
         pathfinding = GetComponent<Unit>();
+        anim = GetComponent<Animator>();
 
 	}
 	
@@ -22,18 +25,28 @@ public class ValueBar : MonoBehaviour {
 
         pathfinding.speed = 3f;
 
-		if (fill>=.25f)
+        SetAllFalse();
+        anim.SetBool("Idle", true);
+
+        if (fill>=.25f)
         {
             pathfinding.speed = 3f;
+            SetAllFalse();
+            anim.SetBool("Walking", true);
+
         }
 
         if (fill >= .6f)
         {
             pathfinding.speed = 6f;
+            SetAllFalse();
+            anim.SetBool("Running", true);
         }
         if (fill >= 1f)
         {
             //te puto mata pringao
+            SetAllFalse();
+            anim.SetBool("Fire", true);
         }
 
     }
@@ -64,5 +77,14 @@ public class ValueBar : MonoBehaviour {
     public void BarToValue(float value)
     {
         fill = value;
+    }
+
+
+    void SetAllFalse()
+    {
+        anim.SetBool("Idle", false);
+        anim.SetBool("Running", false);
+        anim.SetBool("Walking", false);
+        anim.SetBool("Fire", false);
     }
 }

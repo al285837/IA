@@ -2842,7 +2842,7 @@ MonoBehaviour:
   meshResolution: 1
   edgeResolveIterations: 4
   edgeDstThreshold: 0.5
-  viewMeshFilter: {fileID: 0}
+  viewMeshFilter: {fileID: 33728164563184626}
 --- !u!114 &114552672922783634
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -999,9 +999,10 @@ GameObject:
   - component: {fileID: 4777935683289670}
   - component: {fileID: 95081871112258782}
   - component: {fileID: 114529656879013096}
-  m_Layer: 0
+  - component: {fileID: 136479312727983374}
+  m_Layer: 12
   m_Name: eve_j_gonzales@Idle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1777,7 +1778,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1970622997982284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.81606, y: 1.2535539, z: 3.79981}
+  m_LocalPosition: {x: 41.46, y: 0.28, z: 4.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4379646390510790}
@@ -2063,7 +2064,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b625fee53d6cb4496b6d02325fff5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
+  standing_speed: 0
+  crouching_speed: 0
+  direccion: {x: 0, y: 0, z: 0}
+  numero: 0
+--- !u!136 &136479312727983374
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1970622997982284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.6969614
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6913104, z: 0}
 --- !u!137 &137080213299192510
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -327,16 +327,16 @@
     <Compile Include="Assets\DEV\Steering\SteeringBehavior\SteeringBehavior_Seek.cs" />
     <Compile Include="Assets\DEV\Steering\SteeringBehavior\SteeringBehavior_UnalignedObstacleAvoidance.cs" />
     <Compile Include="Assets\DEV\Steering\SteeringBehavior\SteeringBehavior_Wander.cs" />
-<<<<<<< HEAD
-    <Compile Include="Assets\DEV\Steering\SteeringCore.cs" />
-=======
->>>>>>> Unir-Partes
     <Compile Include="Assets\DEV\Steering\SteeringExternalElement\FlowFieldGridGenerator.cs" />
     <Compile Include="Assets\DEV\Steering\SteeringExternalElement\SteeringCrowdUnit.cs" />
     <Compile Include="Assets\DEV\Steering\SteeringExternalElement\SteeringExternalElement_Dynamic.cs" />
     <Compile Include="Assets\DEV\Steering\SteeringExternalElement\SteeringFlowFieldZone.cs" />
     <Compile Include="Assets\DEV\Steering\SteeringExternalElement\SteeringPath.cs" />
     <Compile Include="Assets\DEV\TPSCamera.cs" />
+    <Compile Include="Assets\FOV\CameraFollow.cs" />
+    <Compile Include="Assets\FOV\Scripts\CameraFOV.cs" />
+    <Compile Include="Assets\FOV\Scripts\Controller.cs" />
+    <Compile Include="Assets\FOV\Scripts\FieldOfView.cs" />
     <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Grid.cs" />
     <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Heap.cs" />
     <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Line.cs" />
@@ -345,16 +345,16 @@
     <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Pathfinding.cs" />
     <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\PathRequestManager.cs" />
     <Compile Include="Assets\JUEGO ESTRELLA\SCRIPTS\Unit.cs" />
+    <Compile Include="Assets\SONIDO\SCRIPTS\CameraValueBar.cs" />
     <Compile Include="Assets\SONIDO\SCRIPTS\Character.cs" />
     <Compile Include="Assets\SONIDO\SCRIPTS\Enemy.cs" />
     <Compile Include="Assets\SONIDO\SCRIPTS\PlayerFollow.cs" />
     <Compile Include="Assets\SONIDO\SCRIPTS\ValueBar.cs" />
-<<<<<<< HEAD
-=======
     <Compile Include="Assets\Steering Modificado\SteeringCore.cs" />
->>>>>>> Unir-Partes
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\BodyGuards 1\ReadMe.txt.txt" />
+    <None Include="Assets\BodyGuards\ReadMe.txt.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Templates\Alert.uxml" />

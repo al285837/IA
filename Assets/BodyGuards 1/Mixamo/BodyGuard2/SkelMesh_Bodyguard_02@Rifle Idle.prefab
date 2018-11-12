@@ -2948,7 +2948,7 @@ MonoBehaviour:
   meshResolution: 1
   edgeResolveIterations: 4
   edgeDstThreshold: 0.5
-  viewMeshFilter: {fileID: 0}
+  viewMeshFilter: {fileID: 33534817000253636}
 --- !u!136 &136776129780998918
 CapsuleCollider:
   m_ObjectHideFlags: 1

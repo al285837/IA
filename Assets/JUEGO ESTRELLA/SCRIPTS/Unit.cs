@@ -121,7 +121,7 @@ public class Unit : MonoBehaviour {
     public void OnDrawGizmos() {
         if(path != null)
         {
-            path.DrawWithGizmos();
+            //path.DrawWithGizmos();
         }
 
     }

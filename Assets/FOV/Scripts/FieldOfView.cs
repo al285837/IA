@@ -32,12 +32,13 @@ public class FieldOfView : MonoBehaviour {
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
 
-        targetHeard = SoundScript.target;
         bar = GetComponent<ValueBar>();
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         SoundScript = GetComponent<Enemy>();
+        targetHeard = SoundScript.target;
 
-        StartCoroutine ("FindTargetsWithDelay", .2f);
+
+        StartCoroutine("FindTargetsWithDelay", .2f);
 
 
         
